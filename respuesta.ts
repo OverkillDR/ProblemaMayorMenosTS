@@ -1,0 +1,30 @@
+(() => {
+    const nombres: string[] = ['Hugo', 'Paco', 'Luis', 'Pedro', 'Hector'];
+    const edades: number[] = [35, 50, 40, 18, 30];
+
+    const buscarMenor = () => {
+        let indiceMenor = 0;
+        for (let min = 1; min < edades.length; min++) {
+            if (edades[min] < edades[indiceMenor]) {
+                indiceMenor = min;
+            }
+        }
+        return indiceMenor;
+    };
+
+    const buscarMayor = () => {
+        let indiceMayor = 0;
+        for (let max = 1; max < edades.length; max++) {
+            if (edades[max] > edades[indiceMayor]) {
+                indiceMayor = max;
+            }
+        }
+        return indiceMayor;
+    };
+
+    const indiceMenor = buscarMenor();
+    const indiceMayor = buscarMayor();
+
+    console.log(`${nombres[indiceMenor]} es menor con ${edades[indiceMenor]} años.`);
+    console.log(`${nombres[indiceMayor]} es mayor con ${edades[indiceMayor]} años.`);
+})();
